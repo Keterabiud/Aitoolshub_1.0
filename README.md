@@ -1,73 +1,124 @@
-# React + TypeScript + Vite
+# AIToolsHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI Tools Reviews & Comparisons - Discover the best AI software for your needs.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 **Search & Filter** - Find AI tools by category, pricing, or use case
+- ⭐ **Expert Reviews** - Detailed ratings and honest assessments
+- 🏷️ **Categories** - Writing, Image, Video, Code, Chatbots, and more
+- 🔗 **Affiliate Links** - Direct access to tool websites
+- 📱 **Responsive Design** - Works on all devices
+- 🎨 **Dark Theme** - Modern UI with cyan accents
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 18** - UI Library
+- **TypeScript** - Type Safety
+- **Vite** - Build Tool
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - Component Library
+- **Lucide React** - Icons
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 20+
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/aitoolshub.git
+
+# Navigate to project
+cd aitoolshub
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build for Production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The `dist` folder will contain the production build.
+
+## Deployment
+
+### Vercel (Recommended)
+
+```bash
+npm i -g vercel
+vercel
+```
+
+### Netlify
+
+```bash
+npm run build
+# Drag dist/ folder to Netlify Drop
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── main.tsx          # App entry point
+│   ├── App.tsx           # Main component
+│   ├── index.css         # Global styles
+│   └── App.css           # Component styles
+├── index.html            # HTML template
+├── package.json          # Dependencies
+├── vite.config.ts        # Vite config
+├── tailwind.config.js    # Tailwind config
+└── tsconfig.json         # TypeScript config
+```
+
+## Customization
+
+### Adding New Tools
+
+Edit `src/App.tsx` and add to the `tools` array:
+
+```typescript
+{
+  id: "7",
+  name: "Your Tool",
+  description: "Description here",
+  category: "Category",
+  rating: 4.5,
+  pricing: "Freemium",
+  affiliateUrl: "https://example.com",
+  features: ["Feature 1", "Feature 2"]
+}
+```
+
+### Styling
+
+- Colors defined in `tailwind.config.js`
+- Custom utilities in `src/index.css`
+- Component styles in `src/App.css`
+
+## License
+
+MIT License - feel free to use this for your own projects.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+Built with ❤️ using React, Vite, and Tailwind CSS.
